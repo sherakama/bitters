@@ -18,6 +18,14 @@ h6 {
   margin: 0 0 $small-spacing;
 }
 
+$heading-scale: 5;
+@for $i from 1 through 6 {
+  h#{$i} {
+    font-size: modular-scale($heading-scale);
+  }
+  $heading-scale: $heading-scale - 1;
+}
+
 p {
   margin: 0 0 $small-spacing;
 }

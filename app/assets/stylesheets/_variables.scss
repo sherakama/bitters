@@ -3,11 +3,12 @@ $base-font-family: $helvetica;
 $heading-font-family: $base-font-family;
 
 // Font Sizes
+$modular-scale-ratio: $major-third;
 $base-font-size: 1em;
 
 // Line height
-$base-line-height: 1.5;
-$heading-line-height: 1.2;
+$base-line-height: $golden;
+$heading-line-height: 1.555;
 
 // Other Sizes
 $base-border-radius: 3px;

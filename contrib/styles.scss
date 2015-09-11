@@ -9,6 +9,25 @@ body {
   @include margin(null auto);
   @include padding(null $base-spacing);
   max-width: 500px;
+  position: relative;
+
+  &::before {
+    @include position(absolute, 0 0 0 0);
+    background:
+      linear-gradient( rgba(powderblue, 1) 1px, rgba(powderblue, 0) 0.5px),
+      linear-gradient( rgba(black, 0.1) 1px, rgba(white, 0) 0.5px);
+    background-position:
+      center top,
+      center top;
+    background-origin: padding-box;
+    background-clip: border-box;
+    background-size:
+      100% ($base-line-height * 1em),
+      100% 4px;
+    z-index: 1;
+    pointer-events: none;
+    content: "";
+  }
 }
 
 .default-ol {
