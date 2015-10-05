@@ -1,0 +1,13 @@
+// Pixel Floor
+
+@charset "UTF-8";
+
+// Takes a rem value and rounds it down to the nearest value that is devisible by the number of pixels it represents
+
+@function pixel-floor($rem, $factor: $rem-in-pixels) {
+  $rem: if(unitless($rem), $rem, strip-unit($rem));
+  $pixel-value: $rem * $factor;
+  $new-pixel-value: floor($pixel-value);
+  $new-rem-value: ($new-pixel-value / $factor) * 1rem;
+  @return $new-rem-value;
+}

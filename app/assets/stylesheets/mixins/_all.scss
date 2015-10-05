@@ -1,0 +1,31 @@
+// Mixins
+
+// @mixin line-height-spacing($factor: 1, $property: margin-bottom, $line-height: null) {
+
+//   $local-mobile-line-height: $mobile-line-height;
+//   $local-non-mobile-line-height: $non-mobile-line-height;
+
+//   @if $line-height == "short" {
+//     $local-mobile-line-height: $mobile-line-height-short;
+//     $local-non-mobile-line-height: $non-mobile-line-height-short;
+//   }
+
+//   @include moma-px($property, $local-mobile-line-height * $factor);
+
+//   @include media($bp-non-mobile-1) {
+//     @include moma-px($property, $local-non-mobile-line-height * $factor);
+//   }
+// }
+
+@mixin line-height-spacing($bellow: 1, $adjust: 0.45rem) {
+  padding-top: $adjust;
+  margin-bottom: $base-line-height * $bellow - $adjust;
+
+  // margin-bottom: $base-line-height * $bellow - $adjust;
+
+  // &::first-letter {
+  //   height: $base-line-height * 3;
+  //   content: "";
+  //   display: inline-block;
+  // }
+}

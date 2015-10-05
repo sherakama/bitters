@@ -1,0 +1,95 @@
+html {
+  font-size: $base-font-size;
+}
+
+body {
+  color: $base-font-color;
+  font-family: $base-font-family;
+  font-feature-settings: "kern", "liga", "pnum";
+  line-height: $base-line-height;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  @include line-height-spacing;
+  font-family: $heading-font-family;
+  font-size: $base-font-size;
+  margin-top: 0;
+}
+
+h2 {
+  @include line-height-spacing($adjust: 0.6rem);
+}
+
+h3 {
+  @include line-height-spacing($adjust: 0.9rem);
+}
+
+h4 {
+  @include line-height-spacing($adjust: 0.2rem);
+}
+
+h5 {
+  @include line-height-spacing($adjust: 0.3rem);
+}
+
+h6 {
+  @include line-height-spacing($adjust: 0.4rem);
+}
+
+$heading-scale: 6;
+@for $i from 1 through 6 {
+  $heading-scale: $heading-scale - 1;
+  h#{$i} {
+    $font-size: modular-scale($heading-scale);
+    font-size: $font-size;
+    line-height: line-height-calc($font-size);
+  }
+}
+
+p {
+  @include line-height-spacing;
+
+  &:first-of-type::first-letter {
+    font-size: 1.5em;
+    height: 3em;
+    display: block;
+    line-height: 0;
+    letter-spacing: 0.05em;
+    font-weight: 300;
+  }
+}
+
+a {
+  color: $action-color;
+  text-decoration: none;
+  transition: color $base-duration $base-timing;
+
+  &:active,
+  &:focus,
+  &:hover {
+    color: shade($action-color, 25%);
+  }
+}
+
+hr {
+  border-bottom: $base-border;
+  border-left: 0;
+  border-right: 0;
+  border-top: 0;
+  margin: $base-spacing 0;
+}
+
+code {
+  line-height: 0;
+}
+
+img,
+picture {
+  margin: 0;
+  max-width: 100%;
+}

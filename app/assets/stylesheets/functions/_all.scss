@@ -1,0 +1,30 @@
+// Functions
+
+
+@function strip-unit($value) {
+  @return ($value / ($value * 0 + 1));
+}
+
+@import "pixel-floor";
+
+// Font Sizes
+// $rem-in-pixels: 16;
+// $base-font-size: 1rem;
+
+// $base-line-height: 1.5625rem;
+
+
+
+// Takes a rem value and rounds it down to the nearest value that is devisible by the number of pixels it represents
+
+@function font-size-calc($pixles) {
+  @return ($pixles / 16) * 1rem;
+}
+
+@function line-height-calc($font-size, $local-line-height: $base-line-height) {
+  $font-size: if(unitless($font-size), $font-size, strip-unit($font-size));
+  $local-line-height: if(unitless($local-line-height), $local-line-height, strip-unit($local-line-height));
+  $font-size-line-height-ratio: ceil($font-size / $local-line-height);
+  $line-height: $font-size-line-height-ratio * $local-line-height * 1rem;
+  @return $line-height;
+}

@@ -1,30 +1,30 @@
+// Font Sizes
+$modular-scale-ratio: $major-third;
+$rem-in-pixels: 16;
+$base-font-size: 1rem;
+
 // Typography
 $base-font-family: $helvetica;
 $heading-font-family: $base-font-family;
 
-// Font Sizes
-$modular-scale-ratio: $major-third;
-$base-font-size: 1em;
-
 // Line height
-$base-line-height: $golden;
-$heading-line-height: 1.555;
+$base-line-height: pixel-floor($golden);
 
 // Other Sizes
 $base-border-radius: 3px;
-$base-spacing: $base-line-height * 1em;
+$base-spacing: $base-line-height;
 $small-spacing: $base-spacing / 2;
 $base-z-index: 0;
 
 // Colors
-$blue: #477dca;
+$oxblood: #800020;
 $dark-gray: #333;
 $medium-gray: #999;
 $light-gray: #ddd;
 
 // Font Colors
 $base-font-color: $dark-gray;
-$action-color: $blue;
+$action-color: $oxblood;
 
 // Border
 $base-border-color: $light-gray;

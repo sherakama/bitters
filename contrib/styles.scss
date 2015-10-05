@@ -1,5 +1,4 @@
-@import "bourbon";
-@import "../app/assets/stylesheets/base";
+@import "../app/assets/stylesheets/app";
 
 body {
   margin: 0 0 ($base-spacing * 2);
@@ -22,20 +21,12 @@ body {
     background-origin: padding-box;
     background-clip: border-box;
     background-size:
-      100% ($base-line-height * 1em),
+      100% $base-line-height,
       100% 4px;
     z-index: 1;
     pointer-events: none;
     content: "";
   }
-}
-
-.default-ol {
-  @extend %default-ol;
-}
-
-.default-ul {
-  @extend %default-ul;
 }
 
 .welcome-message {

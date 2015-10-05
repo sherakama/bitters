@@ -5,7 +5,7 @@ var gulp = require("gulp"),
   bourbon = require("node-bourbon").includePaths;
 
 var paths = {
-  scss: "./contrib/*.scss"
+  scss: "./app/assets/stylesheets/**/*.scss"
 };
 
 gulp.task("sass", function () {
